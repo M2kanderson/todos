@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+Todo.create(title: 'test1', body: 'this is just a test', done: false)
+Todo.create(title: 'the best ever', body: '10 steps to rule the world', done: false)
+Todo.create(title: 'My first todo', body: 'they grow up so fast', done: true)
