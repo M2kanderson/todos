@@ -1,10 +1,15 @@
 import React from 'react';
+import TodoDetailViewContainer from './todo_detail_view_container';
 
 class TodoListItem extends React.Component {
   constructor(props) {
     super(props);
     this.props = props;
-    this.state = props.todo;
+    this.state = {id: this.props.todo.id,
+                  title: this.props.todo.title,
+                  body: this.props.todo.body,
+                  done: this.props.todo.done,
+                  detail: false};
   }
 
   updateTodo(){
@@ -15,9 +20,9 @@ class TodoListItem extends React.Component {
 
   render(){
     return <li>
-    {this.props.todo.title}
-    <button onClick={(e) => this.props.destroyTodo(this.props.todo.id)}>Delete</button>
-    <button onClick={(e) => this.updateTodo()}>{this.props.todo.done ? "Undo" : "Done"}</button>
+      <h2 onClick={() => this.setState({detail: !this.state.detail})}>{this.props.todo.title}</h2>
+      <button onClick={(e) => this.updateTodo()}>{this.props.todo.done ? "Undo" : "Done"}</button>
+      {this.state.detail ? <TodoDetailViewContainer todo={this.props.todo} />: ""}
     </li>;
   }
 }
