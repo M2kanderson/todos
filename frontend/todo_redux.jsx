@@ -8,13 +8,15 @@ import configureStore from './store/store.js';
 // import configureStore from './store/store';
 // import Root from './components/root';
 
-import { fetchTodos }  from './util/todo_api_util';
-import { requestTodos } from './actions/todo_actions';
+import { fetchTodos, updateTodo }  from './util/todo_api_util';
+import { requestTodos, createTodo } from './actions/todo_actions';
 
 import { allTodos } from './reducers/selector';
 window.fetchTodos = fetchTodos;
 window.requestTodos = requestTodos;
 window.allTodos = allTodos;
+window.createTodo = createTodo;
+window.updateTodo = updateTodo;
 
 
 
