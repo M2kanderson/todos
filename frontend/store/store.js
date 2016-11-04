@@ -3,7 +3,8 @@ import RootReducer from '../reducers/root_reducer';
 import MasterMiddleware from '../middleware/master_middleware';
 
 const preloadedState = {
-  todos : {}
+  todos : {},
+  steps: {}
 }
 
 const configureStore = () => (
